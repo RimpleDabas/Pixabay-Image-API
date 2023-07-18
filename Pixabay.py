@@ -14,7 +14,13 @@ params = {
 }
 result = requests.get(base_url,params = params)
 json_data = result.json()
+# Parent Directory path
+parent_dir = "Pixabay-Image-API"
+directory = flower
+# Path
+path = os.path.join(parent_dir, directory)
 
+os.mkdir(path)
 for image in json_data['hits']:
     name = image['id']
     image_url = image['largeImageURL']
